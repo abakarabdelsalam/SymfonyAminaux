@@ -6,5 +6,33 @@
 {% endblock %}
 
 {% block body %}
-	Bonjour!
-{% endblock %}
+
+{% for listAnimau in listAnimaux %}
+	<div class="container-fluid	">
+
+		<div class="row  col-sm-12">
+
+
+			<div class="col mb-4" style="max-width: 240px;">
+
+
+				<div class="card" style="max-width: 240px;">
+
+
+					<img src="{{asset('images/' ~ listAnimau.image)}}" class="card-img-top">
+
+					<div class="card-body">
+						<h5 class="card-title">{{listAnimau.nom}}</h5>
+
+						<p class="card-text">{{listAnimau.description}}.</p>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+
+</div></div>{% endfor %}{% endblock %}
