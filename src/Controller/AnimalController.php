@@ -26,10 +26,13 @@ class AnimalController extends AbstractController
     /**
      * @Route("/animal/{id} ", name="aficherAnimal")
      */
-    public function Aficher(AnimalRepository $repository, $id): Response
+    //public function Aficher(AnimalRepository $repository, $id): Response
+
+    public function Aficher(Animal $RecAnimal): Response
+
     {
-        $RecAnimal = $repository->find($id);
-        echo "ID :" . $id;
+        // $RecAnimal = $repository->find($id);
+
         return $this->render('animal/AficherAnimal.html.twig', [
             'listAnimaux' => $RecAnimal
         ]);
