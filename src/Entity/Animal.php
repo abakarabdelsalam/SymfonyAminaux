@@ -42,6 +42,12 @@ class Animal
      */
     private $dengereux;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Famille::class, inversedBy="animaux")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $famille;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +109,18 @@ class Animal
     public function setDengereux(bool $dengereux): self
     {
         $this->dengereux = $dengereux;
+
+        return $this;
+    }
+
+    public function getFamille(): ?Famille
+    {
+        return $this->famille;
+    }
+
+    public function setFamille(?Famille $famille): self
+    {
+        $this->famille = $famille;
 
         return $this;
     }
