@@ -6,21 +6,27 @@
 {% endblock %}
 
 {% block body %}
-	<div class="card-group">
+	<div class="card-group m-3 p-3">
 
 
 		{% for listAnimau in listAnimaux %}
 
-			<div class="card ml-4">
+			<div class="card ml-4 m-2 p-3">
 				<img src="{{asset('images/' ~ listAnimau.image)}}" class="card-img-top" alt="...">
 
-				<div class="card-body">
+				<div class="card-body " m-0 p-0">
+
 					<h5 class="card-title">
 						<a href="{{path('aficherAnimal', {'id' : listAnimau.id})}} ">{{listAnimau.nom}}</a>
 					</h5>
 
+					<div class=">
+						<p class="card-text">{{listAnimau.description}}</p>
+						<p class="btn btn-warning">
+							<a href="">{{listAnimau.famille.libelle}}</a>
+						</p>
+					</div>
 
-					<p class="card-text">{{listAnimau.description}}</p>
 				</div>
 			</div>
 		{% endfor %}
