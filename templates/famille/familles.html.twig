@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Familles
+{% endblock %}
+{% block monTitle %}Page listant les famille
+
+{% endblock %}
+{% block body %}
+
+	{% for famille in familles %}
+
+		<div class="container p-3 m-3">
+			<h1 class="border-bottom border-primary">{{famille.libelle | capitalize}}
+			</h1>
+			<h2>{{famille.description}}
+			</h2>
+		</div>
+	{% endfor %}
+
+{% endblock %}
