@@ -15,7 +15,10 @@
 				<img src="{{asset('images/' ~ listAnimau.image)}}" class="card-img-top" alt="...">
 
 				<div class="card-body">
-					<h5 class="card-title">{{listAnimau.nom}}</h5>
+					<h5 class="card-title">
+						<a href="{{path('aficherAnimal', {'id' : listAnimau.id})}} ">{{listAnimau.nom}}</a>
+					</h5>
+
 
 					<p class="card-text">{{listAnimau.description}}</p>
 				</div>
