@@ -6,30 +6,35 @@
 {% endblock %}
 
 {% block body %}
-	<div class="card-group m-3 p-3">
 
 
-		{% for listAnimau in listAnimaux %}
+	{% for listAnimau in listAnimaux %}
 
-			<div class="card ml-4 m-2 p-3">
-				<img src="{{asset('images/' ~ listAnimau.image)}}" class="card-img-top" alt="...">
 
-				<div class="card-body " m-0 p-0">
-					<h5 class="card-title">
-						<a href="{{path('aficherAnimal', {'id' : listAnimau.id})}} ">{{listAnimau.nom}}</a>
-					</h5>
+		<div class="row align-item-center">
+			<div class="col-2 text-center">
+				<img src="{{asset('images/' ~ listAnimau.image)}}">
 
-					<div class=">
-						<p class="card-text">{{listAnimau.description}}</p>
-						<p class="btn btn-warning">
-							<a href="">{{listAnimau.famille.libelle}}</a>
-						</p>
-					</div>
+			</div>
+			<div class="col-auto">
+				<h2>
+					<a href="{{ path('aficherAnimal', {'id' : listAnimau.id }) }}">
+
+
+						{{ listAnimau.nom }}
+
+					</a>
+				</h2>
+				<h3>{{ listAnimau.description }}</h3>
+
+				<div>
+					<a href="{{ path('aficher_familles',{'id': listAnimau.famille.id}) }}" class="btn btn-primary">{{listAnimau.famille.libelle}}</a>
+
 
 				</div>
+
 			</div>
-		{% endfor %}
-	</div>
 
-
+		</div>
+	{% endfor %}
 {% endblock %}
