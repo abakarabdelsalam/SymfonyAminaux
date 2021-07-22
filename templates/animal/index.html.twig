@@ -31,11 +31,11 @@
 					<a href="{{ path('aficher_familles',{'id': listAnimau.famille.id}) }}" class="btn btn-primary">{{listAnimau.famille.libelle}}</a>
 
 
-				</div>
+				</div><br>
 				<div>
 					{% for continent in listAnimau.continents  %}
 
-						{{continent.libelle}}
+						<a href="" class="btn btn-secondary">{{continent.libelle}}</a>
 
 					{% endfor %}
 				</div>
