@@ -39,6 +39,12 @@
 
 
 					{% endfor %}
+				</div><br>
+				<div>
+					{% for dispose in listAnimau.disposes %}
+						<a href="{{path('afficherPersonne',{'id' :dispose.personne.id} )}}" class="btn btn-info">{{dispose.personne.nom}}</a>
+
+					{% endfor %}
 				</div>
 			</div>
 
