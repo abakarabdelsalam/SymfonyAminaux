@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\DisposeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\DisposeRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=DisposeRepository::class)
+ * @UniqueEntity(fields = {"personne", "animal"})
  */
 class Dispose
 {
